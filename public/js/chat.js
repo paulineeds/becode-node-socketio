@@ -1,6 +1,6 @@
 $(function () {
     //connection
-    let socket = io.connect('http://localhost:3000')
+    let socket = io.connect('https://becode-chatapp-socket.herokuapp.com/')
 
 
     // //button
