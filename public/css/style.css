@@ -86,9 +86,9 @@
   }
   
   .message:nth-child(even) {
-      background-color: #ffc77d;
+      color: #ffc77d;
   }
   
   .message:nth-child(odd) {
-      background-color: #ff9e22;
+      color: #ff9e22;
   }
