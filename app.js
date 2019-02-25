@@ -13,7 +13,7 @@ server = app.listen(3000)
 
 
 //socket.io
-const io = require ('socket.io')(server);
+const io = require ('socket.io').listen(server);
 
 io.on('connection',(socket) => {
     console.log('New user connected')
