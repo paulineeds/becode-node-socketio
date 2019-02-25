@@ -1,23 +1,26 @@
 {
   "name": "becode-node-socketio",
   "version": "1.0.0",
-  "description": "",
+  "description": "my first socket.io app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paulineeds/becode-node-socketio.git"
   },
-  "author": "",
+  "author": "Pauline De Smet",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/paulineeds/becode-node-socketio/issues"
   },
   "homepage": "https://github.com/paulineeds/becode-node-socketio#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "nodemon": "^1.18.10",
     "socket.io": "^2.2.0"
   }
 }
