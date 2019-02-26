@@ -137,7 +137,7 @@
 #appcontainer{
     height: 100vh;
     width: 100vw;
-    background-color:#FFCC80;
+    background-color:#CFD8DC;
 }
 
 
@@ -156,7 +156,7 @@
   input{
       height: 40px;
       padding: 10px;
-      background-color:#FFF3E0;
+      background-color:#B9F6CA;
       border: none;
       
   }
@@ -164,7 +164,7 @@
   button{
       height: 40px;
       padding: 0 15px;
-      background-color: #FFCC80;
+      background-color: #CFD8DC;
       color: white;
       border:none;
   }
@@ -188,7 +188,7 @@
   }
 
   .message-right{
-color:#F57C00;
+color:#69F0AE;
 
 
   }
