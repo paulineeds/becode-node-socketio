@@ -1,6 +1,6 @@
 // $(function () {
 //     //connection
-//     let socket = io.connect('https://becode-chatapp-socket.herokuapp.com/')
+    let socket = io.connect('https://becode-chatapp-socket.herokuapp.com/')
 
 
 //     // //button
@@ -57,7 +57,7 @@ const loginBtn = document.getElementById('loginBtn');
 const loginWindow = document.getElementById('login');
 
 const messages = []; // { author, date, content, type }
-let socket=io()
+// let socket=io()
 
 socket.on('message', message => {
 console.log(message)
@@ -75,13 +75,11 @@ if (message.Type !== messageTypes.LOGIN){
 	chatWindow.scrollTop = chatWindow.scrollHeight;
 })
 
-createMessageHTML = message => {
+const createMessageHTML = (message) => {
 	if (message.type === messageTypes.LOGIN) {
 		return `
-			<p class="secondary-text text-center mb-2">${
-				message.author
-			} joined the chat...</p>
-		`;
+			<p class="text-center mb-2">${message.author} joined the chat...</p>
+`;
 	}
 	return `
 	<div class="message ${
