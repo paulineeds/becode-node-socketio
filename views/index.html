@@ -7,28 +7,18 @@
 <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
 <body>
-    <!-- <section>
-        <div id="change_username">
-            <input id="username" type="text" />
-            <button id="send_username" type="button">Change username</button>
-        </div>
-    </section>
-    <ul id="messages"></ul>
-    <form action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-    </form> -->
 
-    <section>
+  <!-- <section>
             <div id="change_username">
           <input id="username" type="text" />
           <button id="send_username" type="button">Change username</button>
@@ -44,15 +34,45 @@
           <section id="input_zone"> 
             <input id="message" class="vertical-align" type="text" />
             <button id="send_message" class="vertical-align" type="button">Send</button>
-          </section>
+          </section> -->
+  <div id="appcontainer" class="flex-column">
+    <div id="maincontent" class= "container flex-grow-1 flex-column flex-center">
+      <section id="login" >
+        <form action="" id="loginform" class="flex">
+          <input type="text" id="usernameInput" name="username" placeholder="username" class="flex-grow-1">
+          <button id="loginBtn">chat</button>
+        </form>
+      </section>
+      <section id="chat" class="hidden flex-grow-1 flex-column">
+        <div id="messagesList" class="flex-grow-1">
+          <!-- <div class="message message_left">
+            <div class="message-details" class="flex">
+              <p class="message-author">someone</p> -->
+            </div>
+            <!-- <p class="messagecontent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo deleniti nam sapiente quod quibusdam ad exercitationem fugit consequuntur, numquam repellat adipisci impedit eligendi rerum, doloribus soluta perferendis voluptates dignissimos porro!</p>
+          </div>
+          <div class="message message_right">
+            <div class="message-details" class="flex">
+              <p class="message-author"></p>
+            </div>
+            <p class="messagecontent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo deleniti nam sapiente quod quibusdam ad exercitationem fugit consequuntur, numquam repellat adipisci impedit eligendi rerum, doloribus soluta perferendis voluptates dignissimos porro!</p>
+
+          </div>
+          <p class="text-center mb-2">someone joined the chat..</p>
+        </div> -->
+        <form action="" id="messageform" class="flex">
+          <input type="text" name="message" id="messageInput" class="flex-grow-1">
+          <button id="sendBtn">Send</button>
+        </form>
+      </section>
+    </div>
+  </div>
 
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="/js/chat.js"></script>
-    <script>
-        let socket = io();
-    </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="/js/chat.js"></script>
+
 </body>
 
 </html>

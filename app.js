@@ -28,9 +28,10 @@ io.on('connection', socket => {
     //     io.emit('chat message', msg);
     //     console.log('message: ' + msg);
     // });
-    socket.on('new_message', (data) => {
+    socket.on('message', (message) => {
         //broadcast the new message
-        io.sockets.emit('new_message', {message : data.message, username : socket.username});
+        // io.sockets.emit('new_message', {message : data.message, username : socket.username});
+        io.emit('message', message)
     })
 });
 
@@ -41,8 +42,8 @@ console.log('Server running...');
 
 
 
-  
-
+// const messageTypes = {LEFT :'left', RIGHT:'right', LOGIN: 'login'};
+// const message= [];
   
 
 
