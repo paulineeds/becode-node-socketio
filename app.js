@@ -42,10 +42,3 @@ io.on('connection', socket => {
 
 server.listen(process.env.PORT || 3000);
 console.log('Server running...');
-
-
-
-
-
-// const messageTypes = {LEFT :'left', RIGHT:'right', LOGIN: 'login'};
-// const message= [];

@@ -180,7 +180,7 @@ button {
 
 .message {
     padding: 10px;
-    padding-bottom: 0px;
+    padding-bottom: 5px;
     margin-bottom: 10px;
     flex-wrap: wrap;
     border: 1px solid #CFD8DC;
@@ -205,6 +205,10 @@ width:50%;
 }
 
 .message-author {
-    font-weight: bold;
+    font-weight: lighter;
     color: grey;
+}
+
+input:focus{
+    outline:none;
 }
