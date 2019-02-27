@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/paulineeds/becode-node-socketio#readme",
   "dependencies": {
-    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "nodemon": "^1.18.10",
     "socket.io": "^2.2.0"
