@@ -75,7 +75,7 @@ socket.on('message', message => {
 
     messages.push(message);
     displayMessages()
-    //scroll to the bottom
+   
     chatWindow.scrollTop = chatWindow.scrollHeight;
 })
 
@@ -97,7 +97,7 @@ const createMessageHTML = message => {
 	`;
 };
 
-displayMessages = () => {
+const displayMessages = () => {
     const messagesHTML = messages
         .map(message => createMessageHTML(message))
         .join('');
@@ -119,11 +119,7 @@ sendBtn.addEventListener('click', e => {
 
 
     sendMessage(message);
-
-    //scroll to the bottom
-    // chatWindow.scrollTop = chatWindow.scrollHeight;
-
-    //clear input
+   
     messageInput.value = '';
 });
 
@@ -144,8 +140,6 @@ loginBtn.addEventListener('click', e => {
         type: messageTypes.LOGIN
     });
  
-
-    // sendMessage({ author: username, type: messageTypes.LOGIN });
 
     //show chat window and hide login
     loginWindow.classList.add('hidden');
