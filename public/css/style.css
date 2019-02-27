@@ -101,7 +101,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .flex {
@@ -170,13 +170,12 @@ button {
 
 #chat {
     background-color: white;
-    padding: 25px;
+    padding: 40px;
     margin: 25px;
     color: black;
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 70%;
-    border-radius: 5%;
+    width: 60%;
 }
 
 .message {
@@ -186,12 +185,18 @@ button {
     flex-wrap: wrap;
     border: 1px solid #CFD8DC;
     border-radius: 1em;
+    padding-left: 15px;
+    padding-right:15px;
 }
 
 .message-right {
     color: #69F0AE;
-    text-align: left;
-    margin-left: 60%;
+    text-align: right;
+    margin-left: 55%;
+}
+
+.message-left {
+width:50%;
 }
 
 .message-details {
@@ -200,6 +205,6 @@ button {
 }
 
 .message-author {
-    font-weight: 800;
-    text-align: right;
+    font-weight: bold;
+    color: grey;
 }
