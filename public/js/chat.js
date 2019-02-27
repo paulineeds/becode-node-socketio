@@ -79,18 +79,18 @@ socket.on('message', message => {
     chatWindow.scrollTop = chatWindow.scrollHeight;
 })
 
-const createMessageHTML = (message) => {
+const createMessageHTML = message => {
     if (message.type === messageTypes.LOGIN) {
         return `
 			<p class="text-center mb-2">${message.author} joined the chat...</p>
-`;
+        `;
     }
     return `
 	<div class="message ${
 		message.type === messageTypes.LEFT ? 'message-left' : 'message-right'
 	}">
 		<div class="message-details flex">
-			<p class="flex-grow-1 message-author">${message.author}</p>
+			<p class="flex-grow-1 message-author">${message.type === messageTypes.RIGHT ? 'You' : message.author}</p>
 		</div>
 		<p class="message-content">${message.content}</p>
 	</div>
