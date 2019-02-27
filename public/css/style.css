@@ -175,7 +175,8 @@ button {
     color: black;
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 80%;
+    width: 70%;
+    border-radius: 5%;
 }
 
 .message {
@@ -183,12 +184,14 @@ button {
     padding-bottom: 0px;
     margin-bottom: 10px;
     flex-wrap: wrap;
+    border: 1px solid #CFD8DC;
+    border-radius: 1em;
 }
 
 .message-right {
     color: #69F0AE;
-
-
+    text-align: left;
+    margin-left: 60%;
 }
 
 .message-details {
@@ -198,4 +201,5 @@ button {
 
 .message-author {
     font-weight: 800;
+    text-align: right;
 }

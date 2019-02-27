@@ -12,9 +12,9 @@ app.get('/', (req, res) => {
 
 io.on('connection', socket => {
     console.log('a user connected');
-    
-  	//default username
-	socket.username = "Anonymous"
+
+    //default username
+    socket.username = "Anonymous"
 
     //listen on change_username
     socket.on('change_username', (data) => {
@@ -33,7 +33,12 @@ io.on('connection', socket => {
         // io.sockets.emit('new_message', {message : data.message, username : socket.username});
         io.emit('message', message)
     })
+   
+
 });
+
+
+
 
 server.listen(process.env.PORT || 3000);
 console.log('Server running...');
@@ -44,9 +49,3 @@ console.log('Server running...');
 
 // const messageTypes = {LEFT :'left', RIGHT:'right', LOGIN: 'login'};
 // const message= [];
-  
-
-
-
-
-

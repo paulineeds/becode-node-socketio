@@ -1,6 +1,6 @@
 // $(function () {
 //     //connection
-    let socket = io.connect('https://becode-chatapp-socket.herokuapp.com/')
+let socket = io.connect('https://becode-chatapp-socket.herokuapp.com/')
 
 
 //     // //button
@@ -19,7 +19,7 @@
 //     //     return false;
 //     // })
 
-   
+
 
 //     send_message.click(function () {
 //         socket.emit('new_message', {
@@ -42,7 +42,11 @@
 //     })
 // });
 
-const messageTypes = { LEFT: 'left', RIGHT: 'right', LOGIN: 'login' };
+const messageTypes = {
+    LEFT: 'left',
+    RIGHT: 'right',
+    LOGIN: 'login'
+};
 
 //Chat stuff
 const chatWindow = document.getElementById('chat');
@@ -60,28 +64,28 @@ const messages = []; // { author, date, content, type }
 // let socket=io()
 
 socket.on('message', message => {
-console.log(message)
-if (message.Type !== messageTypes.LOGIN){
-    if(message.author === username) {
-        message.type = messageTypes.RIGHT;
-    } else {
-        message.type = messageTypes.LEFT
+    console.log(message)
+    if (message.Type !== messageTypes.LOGIN) {
+        if (message.author === username) {
+            message.type = messageTypes.RIGHT;
+        } else {
+            message.type = messageTypes.LEFT
+        }
     }
-}
 
     messages.push(message);
     displayMessages()
     //scroll to the bottom
-	chatWindow.scrollTop = chatWindow.scrollHeight;
+    chatWindow.scrollTop = chatWindow.scrollHeight;
 })
 
 const createMessageHTML = (message) => {
-	if (message.type === messageTypes.LOGIN) {
-		return `
+    if (message.type === messageTypes.LOGIN) {
+        return `
 			<p class="text-center mb-2">${message.author} joined the chat...</p>
 `;
-	}
-	return `
+    }
+    return `
 	<div class="message ${
 		message.type === messageTypes.LEFT ? 'message-left' : 'message-right'
 	}">
@@ -94,33 +98,33 @@ const createMessageHTML = (message) => {
 };
 
 displayMessages = () => {
-	const messagesHTML = messages
-		.map(message => createMessageHTML(message))
-		.join('');
-	messagesList.innerHTML = messagesHTML;
+    const messagesHTML = messages
+        .map(message => createMessageHTML(message))
+        .join('');
+    messagesList.innerHTML = messagesHTML;
 };
 
 displayMessages()
 
 sendBtn.addEventListener('click', e => {
-	e.preventDefault();
-	if (!messageInput.value) {
-		return console.log('Invalid input');
-	}
+    e.preventDefault();
+    if (!messageInput.value) {
+        return console.log('Invalid input');
+    }
 
-	const message = {
-		author: username,
-		content: messageInput.value
-	};
+    const message = {
+        author: username,
+        content: messageInput.value
+    };
 
 
     sendMessage(message);
 
-	//scroll to the bottom
-	// chatWindow.scrollTop = chatWindow.scrollHeight;
+    //scroll to the bottom
+    // chatWindow.scrollTop = chatWindow.scrollHeight;
 
-	//clear input
-	messageInput.value = '';
+    //clear input
+    messageInput.value = '';
 });
 
 const sendMessage = message => {
@@ -128,19 +132,22 @@ const sendMessage = message => {
 }
 
 loginBtn.addEventListener('click', e => {
-	e.preventDefault();
-	if (!usernameInput.value) {
-		return console.log('Must supply a username');
-	}
+    e.preventDefault();
+    if (!usernameInput.value) {
+        return alert('Must supply a username');
+    }
 
-	//set the username and create logged in message
-	username = usernameInput.value;
-	messages.push({ author: username, type: messageTypes.LOGIN });
-	displayMessages();
+    //set the username and create logged in message
+    username = usernameInput.value;
+    messages.push({
+        author: username,
+        type: messageTypes.LOGIN
+    });
+    displayMessages();
 
-// sendMessage({ author: username, type: messageTypes.LOGIN });
+    // sendMessage({ author: username, type: messageTypes.LOGIN });
 
-	//show chat window and hide login
-	loginWindow.classList.add('hidden');
-	chatWindow.classList.remove('hidden');
+    //show chat window and hide login
+    loginWindow.classList.add('hidden');
+    chatWindow.classList.remove('hidden');
 });
