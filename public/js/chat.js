@@ -139,11 +139,11 @@ loginBtn.addEventListener('click', e => {
 
     //set the username and create logged in message
     username = usernameInput.value;
-    messages.push({
+    sendMessage({
         author: username,
         type: messageTypes.LOGIN
     });
-    displayMessages();
+ 
 
     // sendMessage({ author: username, type: messageTypes.LOGIN });
 
